@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Noter</title>
+</head>
+<body>
+<h2>Noter:</h2>
+<ul>
+    {{^noter}}
+        Ingen noter - tilføj noter.
+    {{/noter}}
+{{#noter}}
+    <li>{{tekst}}
+        <Form method="post">
+        <input name="delete" type ="hidden" value="{{id}}">
+        <button type="submit">Slet note</button>
+    </Form>
+    </li>
+{{/noter}}
+</ul>
+<b>Opret nye noter</b>
+<Form method="post">
+    <input name="note" type ="text">
+    <button type="submit">Ny Note</button>
+</Form>
+
+</body>
+</html>
