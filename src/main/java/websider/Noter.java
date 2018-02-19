@@ -1,34 +1,45 @@
-package services;
+package websider;
 
 import com.github.mustachejava.DefaultMustacheFactory;
 import com.github.mustachejava.Mustache;
 import com.github.mustachejava.MustacheFactory;
+import data.Note;
+import data.NoteDao;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.io.StringWriter;
 import java.util.HashMap;
 
-@Path("login")
-public class Login {
+@Path("noter")
+public class Noter {
+    private static NoteDao noteDao = new NoteDao();
 
-    @POST
-    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public String postLogin(@FormParam("username") String userName,
-                            @FormParam("password") String password) throws IOException {
+    @GET
+    public String getNoter() throws IOException {
         //Initialize Mustache renderer
         MustacheFactory mf = new DefaultMustacheFactory();
-        Mustache m = mf.compile("loginsuccess.mustache");
+        Mustache m = mf.compile("noter.mustache");
         //Set some data
         HashMap<String, Object> mustacheData = new HashMap<String, Object>();
-        mustacheData.put("username", userName);
+        mustacheData.put("noter",noteDao.getNoter());
         //render template with data
         StringWriter writer = new StringWriter();
         m.execute(writer, mustacheData).flush();
         return writer.toString();
+    }
+
+    @POST
+    public String postNote(@FormParam("note") String note, @FormParam("delete") Integer no) throws IOException {
+        if(note!=null) {
+            noteDao.saveNote(note);
+        }
+        if(no!=null){
+            noteDao.deleteNote(no);
+        }
+        return getNoter();
     }
 }

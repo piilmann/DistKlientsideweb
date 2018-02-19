@@ -9,7 +9,7 @@ public class NoteDao {
     private Map<Integer, Note> noter = new HashMap<>();
     private static int nextId = 0;
 
-    public List<Note> getNotes(){
+    public List<Note> getNoter(){
         return new ArrayList<>(noter.values());
     }
 
