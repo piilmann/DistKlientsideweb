@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Velkommen</title>
+</head>
+<body>
+    Servertiden er : {{servertid}}
+    <br/>
+    <h2>Sider uden Mustache</h2>
+    <br/>
+    Her kan du prøve <a href="hejverden"/>Hej Verden</a> - det mest basale eksempel<br/>
+    <br/>
+    Prøv så <a href="7tabel"/>7-tabellen</a><br/>
+    <br/>
+    Prøv så <a href="hejverden2"/>En interaktiv side</a><br/>
+    <br/>
+    <br/>
+    <h2>Sider med Mustache</h2>
+    <br/>
+    Her kan du prøve en login-side.<br/>
+    <form action="loginsuccess" method="post">
+      <input name="brugernavn" type="text" />
+      <input name="adgangskode" type="password" />
+      <button type="submit">Login</button>
+    </form>
+   (det er p.t. ligemeget hvad du skriver i felterne) <br/>
+    <br/>
+    Efter login-siden kommer man til et sted man kan skrive <a href="noter"/>noter</a> ind.<br/>
+</body>
+</html>

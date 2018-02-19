@@ -11,7 +11,7 @@ public class HejVerden2 {
       System.out.println("svaret i HejVerden2 blev angivet til '"+svar+"'");
       if (svar==null) {
         return "Hej verden! <br/>Hvornår smager en Tuborg bedst?<br/>"
-                + "<form><input type='text' name='svar'></form>";
+                + "Skriv svaret her: <form><input type='text' name='svar'></form>";
       }
       if (svar.toLowerCase().startsWith("hvergang")) {
         return "Helt rigtigt!";
