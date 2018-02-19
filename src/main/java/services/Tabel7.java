@@ -1,18 +1,11 @@
 package services;
 
-import com.github.mustachejava.DefaultMustacheFactory;
-import com.github.mustachejava.Mustache;
-import com.github.mustachejava.MustacheFactory;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.core.Context;
 import java.io.IOException;
-import java.io.StringWriter;
-import java.util.HashMap;
 
 @Path("7tabel")
 public class Tabel7 {
@@ -34,8 +27,6 @@ public class Tabel7 {
         builder.append("Sprog: " + request.getHeader("Accept-Language") );
         builder.append("</body>");
         builder.append("</html>");
-
-
 
         return builder.toString();
     }
