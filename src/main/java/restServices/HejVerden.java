@@ -1,8 +1,7 @@
-package websider;
+package restServices;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.QueryParam;
 
 @Path("hejverden")
 public class HejVerden {

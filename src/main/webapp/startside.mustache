@@ -19,12 +19,10 @@
     <h2>Sider med Mustache</h2>
     <br/>
     Her kan du prøve en login-side.<br/>
-    <form action="loginsuccess" method="post">
-      <input name="brugernavn" type="text" />
-      <input name="adgangskode" type="password" />
-      <button type="submit">Login</button>
-    </form>
-   (det er p.t. ligemeget hvad du skriver i felterne) <br/>
+      <input id="brugernavn" name="brugernavn" type="text" />
+      <input id="password" name="adgangskode" type="password" />
+      <button onclick="doLogin();">Login</button>
+    <br/>
     <br/>
     Efter login-siden kommer man til et sted man kan skrive <a href="noter"/>noter</a> ind.<br/>
 </body>

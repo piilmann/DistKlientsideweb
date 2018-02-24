@@ -13,11 +13,11 @@ public class NoteDao {
         return new ArrayList<>(noter.values());
     }
 
-    public Note saveNote(String note){
+    public Note saveNote(Note note){
         int newNo = nextId++;
-        Note noteObj= new Note(newNo, note);
-        noter.put(newNo,noteObj);
-        return noteObj;
+        note.setId(newNo);
+        noter.put(newNo, note);
+        return note;
     }
 
     public boolean deleteNote(Integer id){

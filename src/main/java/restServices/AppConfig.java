@@ -1,4 +1,4 @@
-package websider;
+package restServices;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -6,6 +6,6 @@ import javax.ws.rs.core.Application;
 /** Initial Configuration
  * Created by Christian on 28-04-2017.
  */
-@ApplicationPath("/")
+@ApplicationPath("/rest")
 public class AppConfig extends Application{
 }
