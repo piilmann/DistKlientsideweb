@@ -1,18 +1,16 @@
 package restServices;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.core.Context;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
 @Path("7tabel")
-public class Syvtabel {
-
-    @Context
-    HttpServletRequest request;
+@Produces(MediaType.APPLICATION_JSON)
+public class SyvtabelService {
 
     @GET
     public List<Integer> get7tabel() throws IOException {

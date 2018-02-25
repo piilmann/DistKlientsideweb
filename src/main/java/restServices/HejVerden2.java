@@ -1,5 +1,7 @@
 package restServices;
 
+import data.ErrorMessage;
+
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
@@ -14,7 +16,7 @@ public class HejVerden2 {
             return Response.ok().entity("Helt rigtigt!").build();
         } else {
             return Response.status(Response.Status.BAD_REQUEST)
-                    .entity("{msg:'Beklager, '" + svar + "' er ikke korrekt.'}")
+                    .entity(new ErrorMessage("Beklager, '" + svar + "' er ikke korrekt."))
                     .build();
         }
     }
