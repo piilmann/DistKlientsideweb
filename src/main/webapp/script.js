@@ -26,3 +26,20 @@ function postNote(){
 function deleteNote(id){
     loadPageWithDeleteData("rest/noter/" + id, "noter.mustache");
 }
+
+function hentAdresser(){
+    var query = document.getElementById("adresse").value;
+    fetch("https://dawa.aws.dk/autocomplete?q=" + query + "&type=adresse&fuzzy=")
+        .then(function(res){
+            res.json()
+                .then(function(json){
+                    fetch("adresser.mustache").then(function(templateresp){
+                        templateresp.text().then(function(template){
+                            var html = Mustache.render(template, json);
+                            console.log(html)
+                            document.getElementById("adressecontainer").innerHTML = html;
+                        })
+                    })
+                })
+        })
+}
