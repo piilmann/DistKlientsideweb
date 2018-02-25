@@ -28,16 +28,16 @@ function deleteNote(id){
 }
 
 function hentAdresser(){
-    var query = document.getElementById("adresse").value;
-    fetch("https://dawa.aws.dk/autocomplete?q=" + query + "&type=adresse&fuzzy=")
-        .then(function(res){
-            res.json()
+    var query = document.getElementById("adresse").value; //Hent input feltets værdi
+    fetch("https://dawa.aws.dk/autocomplete?q=" + query + "&type=adresse&fuzzy=") //hent data fra dawa
+        .then(function(res){ //behandl resultatet
+            res.json() //konverter til json
                 .then(function(json){
-                    fetch("adresser.mustache").then(function(templateresp){
-                        templateresp.text().then(function(template){
-                            var html = Mustache.render(template, json);
+                    fetch("adresser.mustache").then(function(templateresp){ //hent template
+                        templateresp.text().then(function(template){ //konverter template-svar til tekst
+                            var html = Mustache.render(template, json); //render template og data
                             console.log(html)
-                            document.getElementById("adressecontainer").innerHTML = html;
+                            document.getElementById("adressecontainer").innerHTML = html; //indsæt resultat i DOM-containeren
                         })
                     })
                 })

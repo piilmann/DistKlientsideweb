@@ -1,25 +1,25 @@
 
 function loadPageWithGetData(url, template){
-    fetch(url)
+    fetch(url) // Hent data
         .then(function(res){
             console.log(res);
-            if (res.status ===200)
+            if (res.status ===200) //forespørgslen gik godt
             {
-                res.json()
+                res.json() // Konverter body til json
                     .then(function (json) {
                         console.log(json);
-                        fetch(template).then(function (templateresp) {
+                        fetch(template).then(function (templateresp) { //Hent mustache template
                             templateresp.text().then(function (template) {
-                                var html = Mustache.render(template, json);
+                                var html = Mustache.render(template, json); //Render siden hos klienten
                                 console.log(html);
-                                document.getElementById("maincontainer").innerHTML = html;
+                                document.getElementById("maincontainer").innerHTML = html; //Indsæt siden
                             });
                         });
                     });
-            } else {
-                res.json()
-                    .then(function(msg){
-                        alert(msg);
+            } else { // noget gik galt!
+                res.json()  //Konverter body til json
+                    .then(function(json){ //tag fat i beskeden
+                        alert(json.msg); //vis fejlen
                     });
             }
         });
