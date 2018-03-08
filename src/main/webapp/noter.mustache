@@ -13,7 +13,7 @@
 {{#.}}
     <li>{{tekst}}
           <input name="delete" type ="hidden" value="{{id}}">
-          <button onclick="deleteNote({{id}});">Slet note</button>
+          <button type="button" onclick="deleteNote({{id}});" class="btn btn-danger">Slet note</button>
     </li>
 {{/.}}
 </ul>

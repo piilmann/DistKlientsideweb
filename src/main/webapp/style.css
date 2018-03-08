@@ -7,10 +7,6 @@ h1 {
     margin-left: 20px;
 }
 
-/* Bordered form */
-form {
-    border: 3px solid #f1f1f1;
-}
 
 #velkomstale {
 	text-align: center;
@@ -26,6 +22,7 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
+
 button {
     background-color: #4CAF50;
     color: white;
