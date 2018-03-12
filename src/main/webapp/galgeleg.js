@@ -1,6 +1,13 @@
 var imageUrl = "images/galge.png"
 var galgenummer = 0;
 
+function guessLetter(input){
+  var guessedLetter = input;
+  console.log("Der blev gættet på bogstavet: "+ input)
+  galgenummer++;
+  updateImg();
+}
+
 function updateImg(){
   switch (galgenummer) {
       case 0:
@@ -37,10 +44,4 @@ function updateImg(){
           updateImg();
           break;
   }
-}
-
-
-function next(){
-  galgenummer++;
-  updateImg();
 }

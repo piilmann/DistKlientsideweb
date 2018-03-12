@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Klientside webprogrammering</title>
+<meta charset="UTF-8">
+<title>Login</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="galgeleg.js"></script>
+<script src="script.js"></script>
+<script src="restController.js"></script>
+<script src="mustache.js"></script>
 </head>
-<body onload="loadStartside()">
-  <div id="maincontainer"></div>
+<body>
 
-  <script src="mustache.js"></script>
-  <script src="restController.js"></script>
-  <script src="script.js"> </script>
+  <div class="container" id="maincontainer">
+    <form>
+    <label for="uname"><b>Brugernavn</b></label>
+    <input type="text" placeholder="Indtast brugernavn" name="brugernavn" id="brugernavn" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Indtast password" name="password" id="password" onkeydown="if (event.keyCode == 13)
+                        document.getElementById('gobtn').click()" required>
+    <button type="button" id="gobtn" class="btn btn-primary" onclick="doLogin()">Login</button>
+  </form>
+
+  </div>
 </body>
-
 </html>
