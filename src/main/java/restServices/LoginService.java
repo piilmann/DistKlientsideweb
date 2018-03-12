@@ -23,7 +23,7 @@ public class LoginService {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response doLogin(LoginData loginData) throws NotBoundException, MalformedURLException, RemoteException {
-        //Bruger b = Brugerloginklient.loginJavabog(loginData.getBrugernavn(),loginData.getPassword());
+        //Bruger b = Brugerlogin(loginData.getBrugernavn(),loginData.getPassword());
         if (loginData.getBrugernavn().equals("admin") && loginData.getPassword().equals("123456")){
             //Login ok
             return Response.ok().entity(new User("admin","Administrator")).build();
