@@ -5,6 +5,8 @@ var correctLetter = 'A';
 function guessLetter(input){
   var guessedLetter = input;
   console.log("Der blev gættet på bogstavet: "+ input)
+
+  sendDataPost("rest/galgeleg","loginsuccess.mustache", guessedLetter);
   if(input == correctLetter){
     // Korrekt bogstav valgt
     galgenummer++;

@@ -30,10 +30,14 @@ public class galgeLeg {
     @Produces(MediaType.APPLICATION_JSON)
     public Response guessLetterPost(String input) throws IOException {
 
-        if(input == "A"){
-           return Response.ok().build(); 
+        String subinput = input.substring(1,input.length()-1);
+        System.out.println(subinput);
+        if(subinput == "A"){
+           System.out.println("Accepted 202");
+           return Response.status(Response.Status.ACCEPTED).build();
         } else {
-           return Response.status(Response.Status.FORBIDDEN).build();
+            System.out.println("BAD REQUEST 400");
+           return Response.status(Response.Status.BAD_REQUEST).build();
         }
   
     }
