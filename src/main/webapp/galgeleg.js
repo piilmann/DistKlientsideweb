@@ -1,11 +1,21 @@
 var imageUrl = "images/galge.png"
 var galgenummer = 0;
+var correctLetter = 'A';
 
 function guessLetter(input){
   var guessedLetter = input;
   console.log("Der blev gættet på bogstavet: "+ input)
-  galgenummer++;
-  updateImg();
+  if(input == correctLetter){
+    // Korrekt bogstav valgt
+    galgenummer++;
+    $("#btn"+input).attr("class","btn btn-success");
+    updateImg();
+  } else {
+    // Forkert bogstav valgt
+    galgenummer++;
+    $("#btn"+input).attr("class","btn btn-danger");
+    updateImg();
+  }
 }
 
 function updateImg(){
@@ -41,7 +51,13 @@ function updateImg(){
       case 7:
           alert("Du tabte!")
           galgenummer = 0;
+          resetButtonColor();
           updateImg();
           break;
   }
+}
+function resetButtonColor(){
+  $("#btnWrapper button").each(function(){
+    $(this).attr("class", "btn btn-primary");
+});
 }
